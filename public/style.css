@@ -1,0 +1,172 @@
+/* styles */
+/* called by your view template */
+
+/* You might want to try something fancier: */
+/* less: http://lesscss.org/ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: helvetica, arial, sans-serif;
+  margin: 25px;
+}
+
+main{
+  overflow: hidden;
+}
+
+h1 {
+  font-weight: bold;
+  color: lime;
+}
+
+h2{
+  color: limegreen;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+p {
+  max-width: 600px;
+}
+
+form {
+  margin-bottom: 25px;
+  padding: 15px;
+  background-color: cyan;
+  display: inline-block;
+  width: 100%;
+  max-width: 340px;
+  border-radius: 3px;
+}
+
+input {
+  display: block;
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 100%;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+button {
+  font-size: 16px;
+  border-radius: 3px;
+  background-color: lightgrey;
+  border: 1px solid grey;
+  box-shadow: 2px 2px pink;
+  cursor: pointer;
+  margin-bottom: 1em;
+}
+
+button:hover {
+  background-color: yellow;
+}
+
+button:active {
+  box-shadow: none;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+footer {
+  margin-top: 50px;
+  padding-top: 25px;
+  border-top: 1px solid lightgrey;
+}
+
+footer > a {
+  color: #BBBBBB;
+}
+
+.nicejob {
+  text-decoration: line-through;
+}
+
+.edit-image{
+  display: none;
+}
+
+#playtime-wrapper{
+  width: 500px;
+}
+
+#edit-image{
+  max-width: 50%;
+  float: left;
+  margin-bottom: 2em;
+}
+#playtime-wrapper{
+  float: left;
+  min-width: 350px;
+  margin-right: 2em;
+}
+
+#buttons{
+  float: left;
+  width: 100%;
+  margin-top: 1em;
+}
+
+#buttons button{
+  margin-bottom: 1em;
+  display: inline-block;
+}
+
+#image-list{
+  width: 100%;
+  margin-right: 5%;
+}
+
+#image-list img.thumbnail{
+  width: 10%;
+  vertical-align: top;
+  margin-bottom: 2em;
+  cursor: pointer;
+  max-width: 150px;
+}
+
+#words{
+  float: left;
+  max-width: 50%;
+}
+
+#saved{
+  clear: both;
+  width: 100%;
+}
+
+@media (max-width: 1100px) {
+  #edit-image{
+    max-width: 60%;
+    min-width: 510px;
+  }
+  #words{
+    min-width: 20%;
+    max-width: 40%;
+  }
+  #image-list img.thumbnail{
+    width: 20%;;
+  }
+}
+
+@media( max-width: 900px ){
+  #edit-image{
+    width: 100%;
+    float: none;
+  }
+  #words{
+    min-width: 100%;
+    max-width: 100%;
+  }
+  #image-list img.thumbnail{
+    width: 30%;
+  }
+}

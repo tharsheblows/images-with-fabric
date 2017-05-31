@@ -1,0 +1,100 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+
+<!-- You might want to try something fancier: -->
+<!-- html/nunjucks docs: https://mozilla.github.io/nunjucks/ -->
+<!-- pug: https://pugjs.org/ -->
+<!-- haml: http://haml.info/ -->
+<!-- hbs(handlebars): http://handlebarsjs.com/ -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome to Glitch!</title>
+    <meta name="description" content="A cool thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <header>
+      <h1>
+        Hello hello
+      </h1>
+    </header>
+
+    <main>
+      <section id="image-list">
+        <h2>
+          Choose an image by clicking on it
+        </h2>
+        <img src="https://cdn.glitch.com/3628bf52-fdb4-427c-81e0-bfdb061820bd%2FIMG_4467.jpg?1495805671591" class="thumbnail" />
+        <img src="https://cdn.glitch.com/3628bf52-fdb4-427c-81e0-bfdb061820bd%2Fflowers.jpg?1495805726691" class="thumbnail" />
+        <img src="https://cdn.glitch.com/3628bf52-fdb4-427c-81e0-bfdb061820bd%2FIMG_3599.JPG?1495806027141" class="thumbnail" />
+        <img src="https://cdn.glitch.com/3628bf52-fdb4-427c-81e0-bfdb061820bd%2FIMG_3565.JPG?1495806080071" class="thumbnail" />
+      </section>
+      <section id="edit-image">
+        <h2>
+          The image you're editing
+        </h2>
+        <div id="playtime-wrapper">
+          <canvas id="playtime" width="500" height="500"></canvas>
+        </div>
+        <div id="buttons">
+          <button class="reset">
+            Reset
+          </button>
+          <button class="make-grayscale">
+            B&W is so cool
+          </button>
+          <button class="start-crop">
+            Crop
+          </button>
+          <button class="save-image">
+            Save the image
+          </button>
+        </div>
+      </section>
+      <section id="words">
+        <h2>
+          Notes
+        </h2>
+        <ul>
+          <li>Add touch events support, this doesn't work with those.</li>
+          <li>This can't handle cropping twice in a row, need to recalculate top and left of el again I think?</li>
+          <li>This is a scaled image, smooshed into the editing space. Should it be its normal size?</li>
+          <li>Or maybe when you crop it, it should fill the space again. That would make sense too.</li>
+          <li>Whatever it does, it should have a "save to size" button. It saves the *canvas* so the max size is the canvas size.</li>
+          <li>There are <a href="http://fabricjs.com/image-filter-webgl">a lot of available filters</a>.</li>
+          <li>The grayscale filter can take a disconcerting second to apply, be nice to have a waiting gif.</li>
+          <li>If you crop it off the area of the image object but still on the canvas, it has a black bar. This is because it's being saved as jpeg. Maybe have an option to save as png?</li>
+        </ul>
+      </section>
+      <section id="saved">
+        <h2>
+          The image to click and save will show up below when you hit save then you can do "save as image".
+        </h2>
+        <p>
+          (I'm not really concerned about this bit now as I already knew how to do it.)
+        </p>
+        <img id="saved-image" />
+      </section>
+    </main>
+
+    <footer>
+      <a href="https://glitch.com">
+        Remix this in Glitch
+      </a>
+    </footer>
+
+    <!-- Your web-app is https, so your scripts need to be too -->
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"
+            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.7.11/fabric.min.js"></script>
+    <script src="/client.js"></script>
+
+  </body>
+</html>
