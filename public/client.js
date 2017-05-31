@@ -19,7 +19,7 @@ $(function() {
   var object, el;
   
   if( $(window).width() < 550 ){
-    console.log( 'hello' );
+    console.log( 'less than 550' );
     var windowWidth = $(window).width();
     console.log(windowWidth);
     $('#playtime').width(windowWidth);
@@ -28,6 +28,11 @@ $(function() {
   
   var canvas = new fabric.Canvas('playtime'),
   f = fabric.Image.filters;
+  
+  var notASquirrel = new fabric.Text('🐿', {selectable: false, top: 50, left: 10});
+  canvas.add(notASquirrel);
+  canvas.renderAll();
+
   
   $('#image-list img.thumbnail').on('click', function(e){
     
@@ -155,7 +160,11 @@ $('#buttons').on('click', '.crop', function (e) {
 
     e.preventDefault();
     if( el === null ){
-
+      
+      var minScaleLimit = 0.001;
+      if( fabric.isTouchSupported ){
+        minScaleLimit = 0.04; // it'll get waaaaay too small otherwise
+      }
       el = new fabric.Rect({
           fill: 'rgba(0,0,0,0.35)',
           originX: 'left',
@@ -168,7 +177,8 @@ $('#buttons').on('click', '.crop', function (e) {
           borderColor: '#FFFF00',
           cornerColor: '#FFFF00',
           hasRotatingPoint: false,
-          minScaleLimit: 0.001,
+          minScaleLimit: minScaleLimit,
+          lockRotation: true, // sorry, you can't make like really super cool tilty things right now because I'm not willing to put in the work
       });
   
       el.left = object.left;
@@ -199,11 +209,11 @@ $('#buttons').on('click', '.crop', function (e) {
   // this is the touchscreen stuff
   if( typeof canvas.getActiveObject() === 'object' ){
     canvas.on('touch:gesture',function(event){
-      console.log( 'touch' );
-      var isGestureEvent = true;      
+      console.log( event );
+      isGestureEvent = true;  
       var lPinchScale = event.self.scale;  
-      var scaleDiff = (lPinchScale -1)/10 + 1;  // Slow down zoom speed    
-      canvas.setZoom(canvas.viewport.zoom*scaleDiff);   
+      //var scaleDiff = (lPinchScale -1)/10 + 1;  // Slow down zoom speed    
+      canvas.setZoom(canvas.viewport.zoom);   
   
     });
   }

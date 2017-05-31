@@ -5,6 +5,8 @@ A test image cropper with Fabric.js
 
 Well. This isn't working quite right but it's getting there. I like the filters.
 
+This uses [a custom Fabric build](http://fabricjs.com/build/) with gestures, interactions and filters.
+
 One bit I had trouble with was calculating the object.clipTo rectangle path. The docs say this: 
 >clipTo :function
 >Function that determines clipping of an object (context is passed as a first >argument) Note that context origin is at the object's center point (not >left/top corner)"
