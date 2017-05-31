@@ -195,4 +195,17 @@ $('#buttons').on('click', '.crop', function (e) {
     canvas.setWidth(500);
  });
   
+  //alert('fabric.isTouchSupported=' + fabric.isTouchSupported);
+  // this is the touchscreen stuff
+  if( typeof canvas.getActiveObject() === 'object' ){
+    canvas.on('touch:gesture',function(event){
+      console.log( 'touch' );
+      var isGestureEvent = true;      
+      var lPinchScale = event.self.scale;  
+      var scaleDiff = (lPinchScale -1)/10 + 1;  // Slow down zoom speed    
+      canvas.setZoom(canvas.viewport.zoom*scaleDiff);   
+  
+    });
+  }
+  
 });
