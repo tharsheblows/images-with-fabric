@@ -37,7 +37,7 @@
       </section>
       <section id="edit-image">
         <h2>
-          The image you're editing
+          The image being edited
         </h2>
         <div id="playtime-wrapper">
           <canvas id="playtime" width="500" height="500"></canvas>
@@ -47,14 +47,17 @@
             Reset
           </button>
           <button class="make-grayscale">
-            B&W is so cool
+            Grayscale
           </button>
           <button class="start-crop">
             Crop
           </button>
           <button class="save-image">
-            Save the image
+            Save
           </button>
+          <p>
+            The image to click and save will show up below when you hit save then you can do "save as image".
+          </p>
         </div>
       </section>
       <section id="words">
@@ -62,19 +65,19 @@
           Notes
         </h2>
         <ul>
-          <li>Touch events work but are twitchy.</li>
-          <li>This can't handle cropping twice in a row, need to recalculate top and left of el again I think?</li>
-          <li>This is a scaled image, smooshed into the editing space. Should it be its normal size?</li>
-          <li>Or maybe when you crop it, it should fill the space again. That would make sense too.</li>
-          <li>Whatever it does, it should have a "save to size" button. It saves the *canvas* so the max size is the canvas size.</li>
+          <li>Touch events work but are twitchy. This is ok, I'm leaving it.</li>
+          <li>This can't handle cropping twice in a row, need to recalculate top and left of el again I think? MMMMMgghghhghfffff well if it's easy I'll finish this.</li>
+          <li>On save, it scales it back up to its original size (well the cropped bit is the same size as in the original image if that makes sense)</li>
+          <li>The crop button is confusing I think</li>
+          <li>And why can't you upload anything? Who wrote this?</li>
           <li>There are <a href="http://fabricjs.com/image-filter-webgl">a lot of available filters</a>.</li>
           <li>The grayscale filter can take a disconcerting second to apply, be nice to have a waiting gif.</li>
-          <li>If you crop it off the area of the image object but still on the canvas, it has a black bar. This is because it's being saved as jpeg. Maybe have an option to save as png?</li>
+          <li>It saves as png, I decided I like that better</li>
         </ul>
       </section>
       <section id="saved">
         <h2>
-          The image to click and save will show up below when you hit save then you can do "save as image".
+          The saved image
         </h2>
         <p>
           (I'm not really concerned about this bit now as I already knew how to do it.)
